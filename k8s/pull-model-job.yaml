@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ollama-pull-model
+  namespace: ollama
+spec:
+  ttlSecondsAfterFinished: 600
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: pull-model
+          image: curlimages/curl:8.15.0
+          env:
+            - name: MODEL
+              value: "exaone3.5:2.4b"
+          command:
+            - sh
+            - -c
+            - |
+              set -e
+              until curl -sf http://ollama:11434/api/tags >/dev/null; do
+                echo "waiting for ollama"
+                sleep 5
+              done
+              curl -sf http://ollama:11434/api/pull \
+                -H 'Content-Type: application/json' \
+                -d "{\"name\":\"${MODEL}\"}"
