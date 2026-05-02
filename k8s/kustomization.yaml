@@ -4,5 +4,6 @@ resources:
   - namespace.yaml
   - pvc.yaml
   - deployment.yaml
+  - vpa.yaml
   - service.yaml
   - pull-model-job.yaml
