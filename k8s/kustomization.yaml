@@ -4,6 +4,7 @@ resources:
   - namespace.yaml
   - pvc.yaml
   - deployment.yaml
+  - image-cache.yaml
   - vpa.yaml
   - service.yaml
   - pull-model-job.yaml

@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: ollama
-          image: ollama/ollama:0.12.9
-          imagePullPolicy: IfNotPresent
+          image: 192.168.55.139:5050/ollama/ollama:0.12.9
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 11434

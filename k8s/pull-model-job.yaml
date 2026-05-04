@@ -10,7 +10,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: pull-model
-          image: curlimages/curl:8.15.0
+          image: 192.168.55.139:5050/curlimages/curl:8.15.0
           env:
             - name: MODEL
               value: "exaone3.5:2.4b"

@@ -4,6 +4,7 @@ metadata:
   name: ollama-models
   namespace: ollama
 spec:
+  storageClassName: synology-nfs
   accessModes:
     - ReadWriteOnce
   resources:
