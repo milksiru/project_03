@@ -21,7 +21,7 @@ spec:
           command: ["/bin/ollama", "--version"]
       containers:
         - name: pause
-          image: registry.k8s.io/pause:3.10
+          image: 192.168.55.139:5050/pause:3.10
           resources:
             requests:
               cpu: 1m
